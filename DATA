@@ -1,0 +1,30 @@
+ SELECT SYSDATE 
+ FROM DUAL;
+ 
+      SELECT SYSDATE + 2 AS TOMORROW 
+      FROM DUAL;
+
+ 
+    
+    
+    SELECT SYSDATE, EXTRACT(YEAR FROM SYSDATE)
+    AS Year, EXTRACT(MONTH FROM SYSDATE) 
+    AS Month, EXTRACT(DAY FROM SYSDATE) 
+    AS Day 
+FROM DUAL;
+
+
+
+
+select to_char (Sysdate,'yyyy-mm-dd hh24:mi:ss') as DataAgora
+FROM DUAL
+
+
+-- especificar diferença de dias
+
+
+
+SELECT TO_DATE('2020-12-30','yyyy-mm-dd') - to_date('2020-06-30','yyyy-mm-dd')as quantidadeDias
+FROM DUAL; --RETORNA 365
+
+    
