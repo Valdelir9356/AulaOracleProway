@@ -1,0 +1,60 @@
+   
+create table autor(
+
+	id_autor int primary key,
+
+	nome varchar(30),
+
+	nascimento number,
+
+	sexo char(1)
+
+);
+
+create table livro(
+
+	id_livro number primary key ,
+
+	titulo varchar(30),
+
+	lancamento number,
+	preco float,
+
+	idautor number,
+
+	foreign key(idautor)
+
+	references autor(id_autor));
+    
+    
+    
+    
+    
+    insert into autor values(5,'DEBORA FIGUEIRA',1987,'F');
+    
+
+insert into livro values(6,'RESUMO DO CORTIÇO',1987,300,5);
+    
+    
+    select * from livro;
+    
+    select livro.id_livro, livro.titulo, livro.lancamento, autor.id_autor, autor.nome from livro
+	inner join autor
+	on autor.id_autor = livro.idautor;
+
+
+
+WITH MEDIAVL_SALARIO AS(
+    SELECT AVG (VL_SALARIO) AS MEDIA 
+        FROM PRO_FUNC
+)
+    SELECT NOM_FUNC,DAT_ADMISSAO,VL_SALARIO
+        FROM PRO_FUNC
+            WHERE VL_SALARIO > ( SELECT MEDIA FROM MEDIAVL_SALARIO);
+            
+            
+            
+            SELECT *
+            FROM PRO_DEPTO
+
+            
